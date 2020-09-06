@@ -15,7 +15,7 @@ public class UserController {
     private UserMapper userMapper;
 
     @GetMapping("/{id}")
-    public User findById(@PathVariable Long id){
+    public User findById(@PathVariable String id){
         User user = this.userMapper.getUserById(id);
         return user;
     }
