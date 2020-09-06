@@ -1,32 +1,47 @@
 server:
     port: 8000
 spring:
+  application: 
+    name: userProvider
   datasource:
     url: jdbc:postgresql://localhost:5432/candy?useUnicode=true&characterEncoding=UTF-8
     username: candy
     password: Liuxing1293.
     type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      initial-size: 5
-      max-active: 20
-      min-idle: 5
-      max-wait: 60000
-      pool-prepared-statements: true
-      max-pool-prepared-statement-per-connection-size: 100
-      max-open-prepared-statements: 20
-      test-on-borrow: false
-      test-on-return: false
-      test-while-idle: true
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      filters: stat,wall,log4j
-      filter:
-        stat:
-          log-slow-sql: true
-          slow-sql-millis: 2000
-      web-stat-filter:
-        enable: true
-      stat-view-servlet:
-        enabled: true
-        login-username: druid_admin
-        login-password: 123456
+# mybatis mapper xml 配置
+mybatis:
+  # mybatis.type-aliases-package：指定domain类的基包，即指定其在*Mapper.xml文件中可以使用简名来代替全类名（看后边的UserMapper.xml介绍）
+  #type-aliases-package:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+# mybatis-plus 配置
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.authorize.entity
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    # 热加载mapper文件
+    refresh: true
+    db-config:
+      db-type: postgre-sql
+eureka:
+  client:
+    service-url:
+      # 指定eureka server通信地址，注意/eureka/小尾巴不能少
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+    prefer-ip-address: true
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.authorize: DEBUG

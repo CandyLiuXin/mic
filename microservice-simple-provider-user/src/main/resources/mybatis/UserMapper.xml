@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.microservice.microservicesimpleprovideruser.Dao">
+<mapper namespace="com.microservice.microservicesimpleprovideruser.Mapper">
     <resultMap id="id" type="String"></resultMap>
     <sql id="table">mic_user</sql>
     <sql id="selectFields">id,username,name,age</sql>

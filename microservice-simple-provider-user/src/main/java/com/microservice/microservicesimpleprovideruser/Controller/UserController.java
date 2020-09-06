@@ -1,8 +1,8 @@
 package com.microservice.microservicesimpleprovideruser.Controller;
 
 
-import com.microservice.microservicesimpleprovideruser.Dao.UserMapper;
-import com.microservice.microservicesimpleprovideruser.entity.User;
+import com.microservice.microservicesimpleprovideruser.Mapper.CtUserMapper;
+import com.microservice.microservicesimpleprovideruser.entity.CtUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
     @Autowired
-    private UserMapper userMapper;
+    private CtUserMapper userMapper;
 
     @GetMapping("/{id}")
-    public User findById(@PathVariable String id){
-        User user = this.userMapper.getUserById(id);
+    public CtUser findById(@PathVariable String id){
+        CtUser user = this.userMapper.selectById(id);
         return user;
     }
 }
