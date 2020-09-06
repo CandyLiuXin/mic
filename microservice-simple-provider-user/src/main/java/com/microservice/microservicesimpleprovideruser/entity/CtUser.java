@@ -31,8 +31,8 @@ public class CtUser extends Model<CtUser> {
     /**
      * 主键
      */
-    @TableId(value = "user_id", type = IdType.AUTO)
-    private Long userId;
+    @TableId(value = "user_id", type = IdType.UUID)
+    private String userId;
 
     /**
      * 用户名称
@@ -41,7 +41,7 @@ public class CtUser extends Model<CtUser> {
     private String userName;
 
     /**
-     * 年龄
+     * 年龄ß
      */
     private Integer age;
 
@@ -55,5 +55,47 @@ public class CtUser extends Model<CtUser> {
     protected Serializable pkVal() {
         return this.userId;
     }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "CtUser [age=" + age + ", balance=" + balance + ", userId=" + userId + ", userName=" + userName + "]";
+    }
+
 
 }

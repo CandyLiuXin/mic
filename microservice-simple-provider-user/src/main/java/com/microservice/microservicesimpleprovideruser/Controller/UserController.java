@@ -1,6 +1,8 @@
 package com.microservice.microservicesimpleprovideruser.Controller;
 
 
+import java.math.BigDecimal;
+
 import com.microservice.microservicesimpleprovideruser.Mapper.CtUserMapper;
 import com.microservice.microservicesimpleprovideruser.entity.CtUser;
 
@@ -17,6 +19,16 @@ public class UserController {
     @GetMapping("/{id}")
     public CtUser findById(@PathVariable String id){
         CtUser user = this.userMapper.selectById(id);
+        return user;
+    }
+
+    @GetMapping("/adduser")
+    public  CtUser adUser(){
+        CtUser user = new CtUser();
+        user.setAge(14);
+        user.setBalance(new BigDecimal(1000));
+        user.setUserName("liuxin");
+        userMapper.insert(user);
         return user;
     }
 }
