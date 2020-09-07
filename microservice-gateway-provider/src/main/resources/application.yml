@@ -8,9 +8,9 @@ spring:
     gateway:
       routes:
         - id: gateway-service
-          uri: lb:/userProvider
+          uri: lb://userProvider    #设置转发地址为用户服务
           filters:
-            - StripPrefix=1
+            - StripPrefix=1         #剥离前置的一个请求路径
           predicates:
             - Path=/user/adduser
 eureka:
