@@ -14,6 +14,19 @@
 			"**/.project": true,
 			"**/.settings": true,
 			"**/.factorypath": true
-		}
+		},
+		"sqltools.connections": [
+			{
+				"database": "candy",
+				"driver": "PostgreSQL",
+				"group": "candy",
+				"name": "postgres",
+				"password": "Liuxing1293.",
+				"port": 5432,
+				"previewLimit": 50,
+				"server": "localhost",
+				"username": "candy"
+			}
+		]
 	}
 }
