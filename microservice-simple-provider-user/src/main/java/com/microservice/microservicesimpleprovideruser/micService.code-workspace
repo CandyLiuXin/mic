@@ -9,6 +9,10 @@
 		{
 			"name": "microservice-gateway-provider",
 			"path": "../../../../../../../microservice-gateway-provider"
+		},
+		{
+			"name": "microservice-auto2-provider",
+			"path": "../../../../../../../microservice-auto2-provider"
 		}
 	],
 	"settings": {
