@@ -5,6 +5,10 @@
 		},
 		{
 			"path": "../../../../../.."
+		},
+		{
+			"name": "microservice-gateway-provider",
+			"path": "../../../../../../../microservice-gateway-provider"
 		}
 	],
 	"settings": {
