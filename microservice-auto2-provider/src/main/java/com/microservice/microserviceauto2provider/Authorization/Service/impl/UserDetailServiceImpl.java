@@ -1,12 +1,9 @@
 package com.microservice.microserviceauto2provider.Authorization.Service.impl;
 
 import java.util.HashMap;
-
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.microservice.microserviceauto2provider.Authorization.Mapper.CtUserMapper;
 import com.microservice.microserviceauto2provider.Authorization.entity.CtUser;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
