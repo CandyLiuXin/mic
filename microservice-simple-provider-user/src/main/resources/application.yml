@@ -61,3 +61,8 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.authorize: DEBUG
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:5000/user/current/get
+      id: userProvider
